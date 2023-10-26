@@ -1,10 +1,13 @@
 import { useState } from 'react'
+import TodoForm from './components/Form/Form'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-   <p>Hello world!</p>
+    <main>
+      <TodoForm />
+    </main>
   )
 }
 
