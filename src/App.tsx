@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import './index.css';
 import TodoForm from './components/Form/TodoForm'
 import Todos from './components/Todos/Todos';
 
