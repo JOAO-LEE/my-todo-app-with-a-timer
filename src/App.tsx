@@ -1,12 +1,13 @@
 import { useState } from 'react'
-import TodoForm from './components/Form/Form'
+import TodoForm from './components/Form/TodoForm'
+import Todos from './components/Todos/Todos';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <main>
+      <h1>Todo with Timer!</h1>
       <TodoForm />
+      <Todos />
     </main>
   )
 }
