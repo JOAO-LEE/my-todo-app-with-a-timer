@@ -1,5 +1,8 @@
+import { useState } from "react"
 import Button from "../Button/Button"
 export default function TodoForm () {
+    const [todoValue, setTodoValue] = useState("");
+
     return (
         <form>
             <div>
@@ -11,7 +14,9 @@ export default function TodoForm () {
                 name="input-todo"
                 id="input-todo" 
                 type="text"
-                required 
+                required
+                value={todoValue}
+                onChange={({ target: { value } }) => setTodoValue(value)}
                 />
             </div>
             <div>
