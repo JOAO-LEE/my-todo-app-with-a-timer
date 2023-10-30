@@ -1,5 +1,6 @@
+import './button-style.scss';
 export default function Button () {
     return (
-        <button>Create Todo!</button>
+        <button className="button-style">Create Todo!</button>
     )
 }
