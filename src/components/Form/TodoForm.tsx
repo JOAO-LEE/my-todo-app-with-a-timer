@@ -1,5 +1,6 @@
-import { useState } from "react"
-import Button from "../Button/Button"
+import { useState } from "react";
+import Button from "../Button/Button";
+import './form.style.scss';
 export default function TodoForm () {
     const [todoValue, setTodoValue] = useState("");
 
