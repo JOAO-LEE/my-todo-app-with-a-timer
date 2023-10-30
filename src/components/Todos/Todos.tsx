@@ -1,10 +1,12 @@
-export default function Button () {
+import './todos-style.scss';
+export default function Todos () {
 
     return (
-        <aside>
+        <aside className="todos">
+            <h2>My todos</h2>
             <ul>
-            <li>
-                <p>Estudar REACT.js</p>
+            <li className="item">
+                <p >Estudar REACT.js</p>
                 <p>09:00</p>
             </li>
             </ul>

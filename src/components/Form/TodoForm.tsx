@@ -5,8 +5,8 @@ export default function TodoForm () {
     const [todoValue, setTodoValue] = useState("");
 
     return (
-        <form>
-            <div>
+        <form className="new-task">
+            <div className="input-container">
                 <label htmlFor="input-todo">
                     Todo:
                 </label>
@@ -20,7 +20,7 @@ export default function TodoForm () {
                 onChange={({ target: { value } }) => setTodoValue(value)}
                 />
             </div>
-            <div>
+            <div className="input-container">
                 <label htmlFor="time-todo">
                     Time:
                 </label>
