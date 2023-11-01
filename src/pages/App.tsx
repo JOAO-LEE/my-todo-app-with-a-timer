@@ -1,13 +1,12 @@
 import '../index.css';
-import TodoForm from '../components/Form/TodoForm'
+import Form from '../components/Form/Form'
 import Todos from '../components/Todos/Todos';
-import './style.scss';
+import appStyle from './App.module.scss';
 
 function App() {
   return (
-    <main className="app-style">
-      <h1>Todo with Timer!</h1>
-      <TodoForm />
+    <main className={appStyle["app-style"]}>
+      <Form />
       <Todos />
     </main>
   )

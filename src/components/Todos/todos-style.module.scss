@@ -10,12 +10,12 @@
     ul {
       max-height: 350px;
       overflow-y: scroll;
-        scrollbar-width: thin;
+      scrollbar-width: thin;
     }
   
     @media screen and (min-width:1280px) {
       
-      h2{
+      h2 {
         text-align: center;
         font-size: 2.25rem;
         margin-bottom: 24px;
@@ -37,7 +37,7 @@
     position: relative;
     cursor: pointer;
   
-    h3 {
+    p {
       margin-bottom: 8px;
       word-break: break-all;
     }
@@ -45,7 +45,7 @@
     span {
       color: #D0D0D0;
     }
-  
+
     @media screen and (min-width:1280px) {
       font-size: 1.8rem;
     }

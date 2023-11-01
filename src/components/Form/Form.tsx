@@ -1,12 +1,12 @@
 import { useState } from "react";
 import Button from "../Button/Button";
-import './form.style.scss';
-export default function TodoForm () {
+import formStyle from './form.module.scss';
+export default function Form () {
     const [todoValue, setTodoValue] = useState("");
 
     return (
-        <form className="new-task">
-            <div className="input-container">
+        <form className={formStyle["new-task"]}>
+            <div className={formStyle["input-container"]}>
                 <label htmlFor="input-todo">
                     Todo:
                 </label>
@@ -20,7 +20,7 @@ export default function TodoForm () {
                 onChange={({ target: { value } }) => setTodoValue(value)}
                 />
             </div>
-            <div className="input-container">
+            <div className={formStyle["input-container"]}>
                 <label htmlFor="time-todo">
                     Time:
                 </label>
