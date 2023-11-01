@@ -34,7 +34,9 @@ export default function Form () {
                 step="1" 
                 />
             </div>
-            <Button />
+            <Button>
+                Add Todo
+            </Button>
         </form>
     )
 }
