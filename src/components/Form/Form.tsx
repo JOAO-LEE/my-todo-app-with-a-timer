@@ -49,7 +49,7 @@ export default function Form () {
                 onChange={(e) => handleForm(e)}
                 />
             </div>
-            <Button>
+            <Button type="submit">
                 Add Todo
             </Button>
         </form>

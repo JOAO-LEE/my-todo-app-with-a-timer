@@ -1,7 +1,9 @@
 import { ReactNode } from 'react';
 import buttonStyle from './button-style.module.scss';
-export default function Button ({children}: {children: ReactNode}) {
+import { TButton } from './TButton';
+
+export default function Button ({ children, type }: { children: ReactNode, type: TButton }) {
     return (
-        <button className={buttonStyle['button-style']}>{children}</button>
+        <button type={type} className={buttonStyle['button-style']}>{children}</button>
     )
 }
