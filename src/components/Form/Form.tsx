@@ -1,20 +1,21 @@
 import { ChangeEvent, useState } from "react";
 import Button from "../Button/Button";
 import formStyle from './form.module.scss';
-import ITask from "../ITask";
+import ITask from "../../interfaces/ITask";
+import { v4  as uuidv4 } from "uuid";
 
-export default function Form () {
-    const [todoValue, setTodoValue] = useState<ITask>({task: "", time: ""});
-    console.log(todoValue);
-    
+export default function Form ({ setTask }: { setTask: React.Dispatch<React.SetStateAction<Array<ITask>>>}) {
+    const [todoValue, setTodoValue] = useState<ITask>({});
 
     const addTask = (event: React.FormEvent<HTMLFormElement> ) => {
+        setTodoValue({ task: "", time: "" });
         event.preventDefault();
+        setTask((previousTasks) => [...previousTasks, todoValue]);
     };
 
     const handleForm = (event: ChangeEvent<HTMLInputElement>) => {
-        const {target: { value, name }} = event;
-        setTodoValue(e => ({...e, [name]: value}))
+        const { target: { value, name } } = event;
+        setTodoValue(e => ({ ...e, [name]: value }))
     };
 
     return (

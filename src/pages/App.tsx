@@ -10,8 +10,8 @@ function App() {
   const [task, setTask] = useState<Array<ITask>>([]);
   return (
     <main className={appStyle["app-style"]}>
-      <Form  />
-      <Todos task={task} setTask={setTask} />
+      <Form setTask={setTask} />
+      <Todos task={task}  />
       <Timer />
     </main>
   )
