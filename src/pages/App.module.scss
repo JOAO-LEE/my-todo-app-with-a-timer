@@ -17,10 +17,11 @@
       "new-task tasks"
       "timer tasks"
       ;
+
       column-gap: 64px;
       grid-template-rows: min-content min-content;
       grid-template-columns: 750px 300px;
       justify-content: center;
       align-content: center;
-    }
   }
+}

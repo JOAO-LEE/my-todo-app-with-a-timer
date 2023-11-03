@@ -8,9 +8,9 @@ export default function Form ({ setTask }: { setTask: React.Dispatch<React.SetSt
     const [todoValue, setTodoValue] = useState<ITask>({});
 
     const addTask = (event: React.FormEvent<HTMLFormElement> ) => {
-        setTodoValue({ task: "", time: "" });
         event.preventDefault();
-        setTask((previousTasks) => [...previousTasks, todoValue]);
+        setTask((previousTasks) => [...previousTasks, {...todoValue, taskCompleted: false, taskSelected: false, id: uuidv4()}]);
+        setTodoValue({ task: "", time: "00:00" });
     };
 
     const handleForm = (event: ChangeEvent<HTMLInputElement>) => {

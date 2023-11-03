@@ -12,7 +12,7 @@ export default function Timer () {
             <div className={timerStyle["clock-container"]}>
                 <Clock />
             </div>
-            <Button>
+            <Button type="submit">
                 Start
             </Button>
         </div>

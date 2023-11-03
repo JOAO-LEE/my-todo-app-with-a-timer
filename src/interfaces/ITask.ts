@@ -1,8 +1,17 @@
 interface ITask {
+    id?: string
     task?: string
     time?: string
-    selected?: boolean
-    completed?: boolean
+    taskSelected?: boolean
+    taskCompleted?: boolean
 }
 
-export default ITask;
+interface ITaskProp {
+    tasks: ITask[]
+    taskSelection: () => void
+}
+
+interface ITaskItem extends ITask {
+    taskSelection: () => void
+}
+export type { ITaskProp, ITask, ITaskItem };

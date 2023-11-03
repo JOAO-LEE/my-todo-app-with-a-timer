@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import buttonStyle from './button-style.module.scss';
-import { TButton } from '../../types/TButton';
+import { TButton } from '../../types/TTasks';
 
 export default function Button ({ children, type }: { children: ReactNode, type: TButton }) {
     return (
