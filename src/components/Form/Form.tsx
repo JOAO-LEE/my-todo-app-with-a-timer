@@ -1,16 +1,16 @@
 import { ChangeEvent, useState } from "react";
 import Button from "../Button/Button";
 import formStyle from './form.module.scss';
-import ITask from "../../interfaces/ITask";
+import { ITask } from "../../interfaces/ITask";
 import { v4  as uuidv4 } from "uuid";
 
 export default function Form ({ setTask }: { setTask: React.Dispatch<React.SetStateAction<Array<ITask>>>}) {
-    const [todoValue, setTodoValue] = useState<ITask>({});
+    const [todoValue, setTodoValue] = useState<ITask | undefined>();
 
     const addTask = (event: React.FormEvent<HTMLFormElement> ) => {
         event.preventDefault();
         setTask((previousTasks) => [...previousTasks, {...todoValue, taskCompleted: false, taskSelected: false, id: uuidv4()}]);
-        setTodoValue({ task: "", time: "00:00" });
+        setTodoValue({ task: "", time: "00:00:00" });
     };
 
     const handleForm = (event: ChangeEvent<HTMLInputElement>) => {
@@ -30,7 +30,7 @@ export default function Form ({ setTask }: { setTask: React.Dispatch<React.SetSt
                 id="input-todo" 
                 type="text"
                 required
-                value={todoValue.task}
+                value={todoValue?.task}
                 onChange={(e) => handleForm(e)}
                 />
             </div>
@@ -46,7 +46,7 @@ export default function Form ({ setTask }: { setTask: React.Dispatch<React.SetSt
                 type="time" 
                 required
                 step="1" 
-                value={todoValue.time}
+                value={todoValue?.time}
                 onChange={(e) => handleForm(e)}
                 />
             </div>

@@ -8,10 +8,10 @@ interface ITask {
 
 interface ITaskProp {
     tasks: ITask[]
-    taskSelection: () => void
+    taskSelection: (task: ITask) => void
 }
 
 interface ITaskItem extends ITask {
-    taskSelection: () => void
+    taskSelection: (task: ITask) => void
 }
 export type { ITaskProp, ITask, ITaskItem };
