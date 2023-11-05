@@ -1,7 +1,7 @@
 import Button from "../Button/Button";
 import Clock from "./Clock/Clock";
 import timerStyle from './timer-style.module.scss';
-// import timerStyle from './timer-style.module.scss';
+import { timeToSeconds } from "../../assets/common/utils/date";
 
 
 export default function Timer () {

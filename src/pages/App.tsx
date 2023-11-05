@@ -1,6 +1,6 @@
 import '../index.css';
 import Form from '../components/Form/Form'
-import Todos from '../components/Todos/Todos';
+import Tasks from '../components/Tasks/TaskList';
 import appStyle from './App.module.scss';
 import Timer from '../components/Timer/Timer';
 import { useState } from 'react';
@@ -21,14 +21,14 @@ function App() {
   };
 
   const taskToDelete = (id: string): void => {
-    setTasks(_previousTasks => tasks.filter(task => (!(task.id === id))))
+    setTasks(() => tasks.filter(task => (!(task.id === id))))
   };
 
   return (
     <main >
       <section className={appStyle["app-style"]}>
         <Form setTask={setTasks} />
-        <Todos tasks={tasks} taskSelection={taskSelection} taskToDelete={taskToDelete}/>
+        <Tasks tasks={tasks} taskSelection={taskSelection} taskToDelete={taskToDelete}/>
         <Timer />
       </section>
     </main>

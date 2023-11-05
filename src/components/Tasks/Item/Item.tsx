@@ -3,7 +3,7 @@ import { ITaskItemActions  } from '../../../interfaces/ITask';
 import todosStyle from '../todos-style.module.scss';
 
 export default function Item({task, time, taskSelected, taskCompleted, id, taskSelection, taskToDelete }: ITaskItemActions) {
-    let selectedClass = taskSelected && `${todosStyle["selected-item"]}`;
+    const selectedClass: string | false | undefined = taskSelected && `${todosStyle["selected-item"]}`;
 
     return (
         <li className={`${todosStyle["item"]} ${selectedClass}`} onClick={() => taskSelection({task, time, taskSelected, taskCompleted, id})}>

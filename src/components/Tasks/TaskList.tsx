@@ -2,7 +2,7 @@ import { ITaskListProps } from '../../interfaces/ITask';
 import Item from './Item/Item';
 import todosStyle from './todos-style.module.scss';
 
-export default function Todos ({ tasks, taskSelection, taskToDelete }: ITaskListProps) {
+export default function TaskList ({ tasks, taskSelection, taskToDelete }: ITaskListProps) {
 
     return (
         <aside className={todosStyle["todos"]}>
