@@ -1,8 +1,8 @@
-import { ITaskProp } from '../../interfaces/ITask';
+import { ITaskListProps } from '../../interfaces/ITask';
 import Item from './Item/Item';
 import todosStyle from './todos-style.module.scss';
 
-export default function Todos ({ tasks, taskSelection }: ITaskProp) {
+export default function Todos ({ tasks, taskSelection, taskToDelete }: ITaskListProps) {
 
     return (
         <aside className={todosStyle["todos"]}>
@@ -10,6 +10,7 @@ export default function Todos ({ tasks, taskSelection }: ITaskProp) {
             <ul>
                 {tasks.map((task) => (
                    <Item
+                   taskToDelete={taskToDelete}
                    taskSelection={taskSelection}
                     key={task.id} 
                     {...task} />

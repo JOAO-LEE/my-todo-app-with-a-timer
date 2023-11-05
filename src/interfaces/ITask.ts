@@ -6,12 +6,16 @@ interface ITask {
     taskCompleted?: boolean
 }
 
-interface ITaskProp {
+interface ITaskListProps {
     tasks: ITask[]
     taskSelection: (task: ITask) => void
+    taskToDelete: (id: string) => void
+
 }
 
-interface ITaskItem extends ITask {
+interface ITaskItemActions extends ITask {
     taskSelection: (task: ITask) => void
+    taskToDelete: (id: string) => void
 }
-export type { ITaskProp, ITask, ITaskItem };
+
+export type { ITaskListProps, ITask, ITaskItemActions };

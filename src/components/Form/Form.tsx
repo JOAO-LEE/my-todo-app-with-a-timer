@@ -5,7 +5,7 @@ import { ITask } from "../../interfaces/ITask";
 import { v4  as uuidv4 } from "uuid";
 
 export default function Form ({ setTask }: { setTask: React.Dispatch<React.SetStateAction<Array<ITask>>>}) {
-    const [todoValue, setTodoValue] = useState<ITask | undefined>();
+    const [todoValue, setTodoValue] = useState<ITask>({ task: "", time: "" });
 
     const addTask = (event: React.FormEvent<HTMLFormElement> ) => {
         event.preventDefault();
