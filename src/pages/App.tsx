@@ -22,6 +22,7 @@ function App() {
 
   const taskToDelete = (id: string): void => {
     setTasks(() => tasks.filter(task => (!(task.id === id))))
+    // setSelectedTask();
   };
 
   return (
@@ -29,7 +30,7 @@ function App() {
       <section className={appStyle["app-style"]}>
         <Form setTask={setTasks} />
         <Tasks tasks={tasks} taskSelection={taskSelection} taskToDelete={taskToDelete}/>
-        <Timer />
+        <Timer {...selectedTask} />
       </section>
     </main>
   )
