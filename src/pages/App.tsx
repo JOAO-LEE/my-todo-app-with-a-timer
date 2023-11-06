@@ -9,8 +9,9 @@ import { ITask } from '../interfaces/ITask';
 function App() {
   const [tasks, setTasks] = useState<Array<ITask>>([]);
   const [selectedTask, setSelectedTask] = useState<ITask>();
+  let [time, setTimer] = useState<number | undefined>();
 
-  const taskSelection = (taskToSelect: ITask): void => {
+  const selectTask = (taskToSelect: ITask): void => {
     setSelectedTask(taskToSelect);
     setTasks(previousTasks => previousTasks
       .map(t => ({
@@ -22,15 +23,16 @@ function App() {
 
   const taskToDelete = (id: string): void => {
     setTasks(() => tasks.filter(task => (!(task.id === id))))
-    // setSelectedTask();
+    // setSelectedTask(undefined);
   };
+
 
   return (
     <main >
       <section className={appStyle["app-style"]}>
         <Form setTask={setTasks} />
-        <Tasks tasks={tasks} taskSelection={taskSelection} taskToDelete={taskToDelete}/>
-        <Timer {...selectedTask} />
+        <Tasks tasks={tasks} selectTask={selectTask} taskToDelete={taskToDelete}/>
+        <Timer selectedTask={selectedTask!} timeHandler={{time, setTimer}}/>
       </section>
     </main>
   )

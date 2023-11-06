@@ -8,14 +8,15 @@ interface ITask {
 
 interface ITaskListProps {
     tasks: ITask[]
-    taskSelection: (task: ITask) => void
-    taskToDelete: (id: string) => void
+    selectTask: (task: ITask) => void
+    deleteTask: (id: string) => void
 
 }
 
 interface ITaskItemActions extends ITask {
-    taskSelection: (task: ITask) => void
-    taskToDelete: (id: string) => void
+    selectTask: (task: ITask) => void
+    deleteTask: (id: string) => void
 }
+
 
 export type { ITaskListProps, ITask, ITaskItemActions };

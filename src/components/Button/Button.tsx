@@ -1,9 +1,14 @@
 import { ReactNode } from 'react';
 import buttonStyle from './button-style.module.scss';
-import { TButton } from '../../types/TTasks';
+import IButtonAction from '../../interfaces/IButton'; 
 
-export default function Button ({ children, type }: { children: ReactNode, type: TButton }) {
+export default function Button ({ children, typeAndAction }: { children: ReactNode, typeAndAction: IButtonAction }) {
     return (
-        <button type={type} className={buttonStyle['button-style']}>{children}</button>
+        <button 
+        type={typeAndAction?.type} 
+        className={buttonStyle['button-style']}
+        onClick={typeAndAction?.onClick}
+        >{children}
+        </button>
     )
 }
