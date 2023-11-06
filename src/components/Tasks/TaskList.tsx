@@ -1,11 +1,11 @@
 import { ITaskListProps } from '../../interfaces/ITask';
 import Item from './Item/Item';
-import todosStyle from './todos-style.module.scss';
+import taskStyle from './tasks-style.module.scss';
 
-export default function TaskList ({ tasks, selectTask,deleteTask }: ITaskListProps) {
+export default function TaskList ({ tasks, selectTask, deleteTask }: ITaskListProps) {
 
     return (
-        <aside className={todosStyle["todos"]}>
+        <aside className={taskStyle["todos"]}>
             <h2>My todos</h2>
             <ul>
                 {tasks.map((task) => (

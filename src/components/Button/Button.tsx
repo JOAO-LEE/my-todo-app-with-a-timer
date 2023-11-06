@@ -2,12 +2,13 @@ import { ReactNode } from 'react';
 import buttonStyle from './button-style.module.scss';
 import IButtonAction from '../../interfaces/IButton'; 
 
-export default function Button ({ children, typeAndAction }: { children: ReactNode, typeAndAction: IButtonAction }) {
+export default function Button ({ children, typeAndActions }: { children: ReactNode, typeAndActions: IButtonAction }) {
     return (
         <button 
-        type={typeAndAction?.type} 
         className={buttonStyle['button-style']}
-        onClick={typeAndAction?.onClick}
+        type={typeAndActions?.type} 
+        onClick={typeAndActions?.onClick}
+        disabled={typeAndActions?.disable}
         >{children}
         </button>
     )

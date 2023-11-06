@@ -2,38 +2,40 @@ import Button from "../Button/Button";
 import Clock from "./Clock/Clock";
 import timerStyle from './timer-style.module.scss';
 import { timeToSeconds } from "../../assets/common/utils/time";
-import { ITask } from "../../interfaces/ITask";
-import ITimer from '../../interfaces/ITimer';
-import { useEffect } from "react";
+import { ITimerProps } from '../../interfaces/ITimer';
+import { useEffect, useState } from "react";
 
 const ONE_SECOND = 1000;
 
-export default function Timer ({ selectedTask, timeHandler }: { selectedTask: ITask, timeHandler?: ITimer }) {
-    
+export default function Timer ({ selectedTask, handleTime, completeTask }: ITimerProps) {
+    const [isRunning, setIsRunning] = useState(false);
 
     useEffect(() => {
         if (selectedTask?.time) {
-            timeHandler?.setTimer(timeToSeconds(selectedTask.time))
+            handleTime?.setTimer(timeToSeconds(selectedTask.time));
         }
     }, [selectedTask]);
 
-    const setRegression = (counter: number = 0) => {
+    const setRegression = (counter: number = 0): void => {
         setTimeout(() => {
             if (counter > 0 ) {
-                timeHandler?.setTimer(counter - 1); 
-               return setRegression(counter - 1);
+                setIsRunning(true);
+                handleTime?.setTimer(counter - 1); 
+                return setRegression(counter - 1);
             }
+            setIsRunning(false);
+            completeTask();
         }, ONE_SECOND);
     };
 
     return (
         <div className={timerStyle["timer"]}>
             <p className={timerStyle["timer-title"]}>Choose a Todo and Start the timer</p>
-            {selectedTask && <p>{selectedTask.task}</p>}
+            {selectedTask?.taskSelected && <p>{selectedTask?.task}</p>}
             <div className={timerStyle["clock-container"]}>
-                <Clock time={timeHandler?.time} />
+                <Clock time={handleTime?.time} running={isRunning} />
             </div>
-            <Button typeAndAction={{type: "submit", onClick: () => setRegression(timeHandler?.time)}}>
+            <Button typeAndActions={{type: "submit", onClick: () => setRegression(handleTime?.time), disable: selectedTask?.taskSelected}}>
                 Start
             </Button>
         </div>

@@ -21,18 +21,33 @@ function App() {
     ));
   };
 
-  const taskToDelete = (id: string): void => {
-    setTasks(() => tasks.filter(task => (!(task.id === id))))
-    // setSelectedTask(undefined);
+  const deleteTask = (id: string): void => {
+    setTasks(() => tasks.filter(task => (!(task.id === id))));
   };
 
+  const completeTask = (): void => {
+    setSelectedTask(undefined);
+    if (selectedTask) {
+     setTasks(previousTasks => previousTasks.map(task => {
+        if (task.id === selectedTask.id) {
+          setTimer(0);
+          return {
+            ...task,
+            taskCompleted: true,
+            taskSelected: false,
+          };
+        }
+        return task;
+      })
+    )};
+  }
 
   return (
     <main >
       <section className={appStyle["app-style"]}>
         <Form setTask={setTasks} />
-        <Tasks tasks={tasks} selectTask={selectTask} taskToDelete={taskToDelete}/>
-        <Timer selectedTask={selectedTask!} timeHandler={{time, setTimer}}/>
+        <Tasks tasks={tasks} selectTask={selectTask} deleteTask={deleteTask}/>
+        <Timer handleTime={{time, setTimer}} selectedTask={selectedTask!} completeTask={completeTask}/>
       </section>
     </main>
   )
