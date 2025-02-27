@@ -4,14 +4,18 @@
   :root {
     font-family: "Poppins", sans-serif;
     --bgColorDark: #02040f;
-    --bgColorLight: #eddea4;
+    --bgColorLight: #f4f1de;
     --clrPrimary: #0fa3b1;
     --clrSecundary: #f7a072;
     --accColor: #b5e2fa;
   }
+  body {
+    background-color: var(--bgColorLight);
+
+  }
 
   #main-wrapper {
-    background-color: var(--bgColorLight);
+    // background-color: var(--bgColorLight);
     color: var(--clrSecundary);
     padding: 1rem;
     min-height: calc(100dvh - 2rem);

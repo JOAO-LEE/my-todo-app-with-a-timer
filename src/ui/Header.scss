@@ -2,9 +2,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  h1 {
-   font-family: "Agbalumo", sans-serif;
-   font-size: 2rem;
-   
-  }
+  padding-block: .75rem;
+  padding-inline: 1rem;
+  position: sticky;
+  top: 0;
+  background-color: var(--bgColorLight);
+  border-bottom: .06rem solid var(--clrPrimary);
+
+    h1 {
+      font-family: "Agbalumo", sans-serif;
+      font-size: 2rem;
+      color: var(--clrSecundary);
+
+        .clover-logo{
+          color: var(--clrPrimary);
+        }
+    }
+
+    .theme-switcher {
+      font-size: 1.75rem;
+      color: var(--clrSecundary);
+    }
 }
