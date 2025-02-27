@@ -1,0 +1,24 @@
+.button-shadowed {
+  border-radius: 0.75rem;
+  padding-inline: 0.5rem;
+  padding-block: 0.25rem;
+  user-select: none;
+  -webkit-user-select: none; 
+  background-color: var(--clrPrimary);
+  color:var(--bgColorLight); 
+  border: 1px solid var(--clrSecundary);
+  box-shadow: 2.5px 2.5px var(--clrSecundary);
+  transition: all 150ms ease-in-out;
+
+    &:active {
+      color: var(--clrPrimary);
+      background-color: var(--clrSecundary);
+      box-shadow: 0px 0px 0px #0000009F;
+      border: 1px solid var(--clrPrimary);
+    }
+
+    &:hover:not(:active) {
+      color: var(--clrPrimary);
+      background-color: var(--accColor);
+    }
+}

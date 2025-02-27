@@ -1,15 +1,18 @@
-import { ReactNode } from 'react';
-import buttonStyle from './button-style.module.scss';
-import IButtonAction from '../../interfaces/IButton'; 
-
-export default function Button ({ children, typeAndActions }: { children: ReactNode, typeAndActions: IButtonAction }) {
+import { ComponentProps } from "react";
+import  "./Button.scss";
+// import IButtonAction from '../../interfaces/IButton'; 
+// 
+export function Button ({...rest}: ComponentProps<"button">) {
     return (
         <button 
-        className={buttonStyle['button-style']}
-        type={typeAndActions?.type} 
-        onClick={typeAndActions?.onClick}
-        disabled={typeAndActions?.disable}
-        >{children}
-        </button>
+        className="button-shadowed" 
+        {...rest}
+        />
+        // className={buttonStyle['button-style']}
+        // type={typeAndActions?.type} 
+        // onClick={typeAndActions?.onClick}
+        // disabled={typeAndActions?.disable}
+        // >{children}
+        
     )
 }
