@@ -3,7 +3,8 @@
   padding-inline: 0.5rem;
   padding-block: 0.25rem;
   user-select: none;
-  -webkit-user-select: none; 
+  -webkit-user-select: none;
+  -moz-user-select: none; 
   background-color: var(--clrPrimary);
   color:var(--bgColorLight); 
   border: 1px solid var(--clrSecundary);
