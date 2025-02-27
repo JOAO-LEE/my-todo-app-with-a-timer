@@ -5,7 +5,8 @@ import Tasks from '../components/Tasks/TaskList';
 import Timer from '../components/Timer/Timer';
 import { useState } from 'react';
 import { ITask } from '../interfaces/ITask';
-import { Header } from '../ui/Header';
+import { Header } from '../ui/Header/Header';
+import { Footer } from '../ui/Footer/Footer';
 
 function App() {
   const [tasks, setTasks] = useState<Array<ITask>>([]);
@@ -45,14 +46,15 @@ function App() {
 
   return (
     <>
-    <Header />
-    <main id="main-wrapper">
-      <section id="section-wrapper">
-        <Form setTask={setTasks} />
-        <Tasks tasks={tasks} selectTask={selectTask} deleteTask={deleteTask}/>
-        <Timer handleTime={{time, setTimer}} selectedTask={selectedTask!} completeTask={completeTask}/>
-      </section>
-    </main>
+      <Header />
+      <main id="main-wrapper">
+        <section id="section-wrapper">
+          <Form setTask={setTasks} />
+          <Tasks tasks={tasks} selectTask={selectTask} deleteTask={deleteTask}/>
+          <Timer handleTime={{time, setTimer}} selectedTask={selectedTask!} completeTask={completeTask}/>
+        </section>
+      </main>
+      <Footer />
     </>
   )
 }
