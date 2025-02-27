@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from "react";
 import Button from "../Button/Button";
-import formStyle from './form.module.scss';
+// import formStyle from './form.module.scss';
 import { ITask } from "../../interfaces/ITask";
 import { v4  as uuidv4 } from "uuid";
 
@@ -19,8 +19,14 @@ export default function Form ({ setTask }: { setTask: React.Dispatch<React.SetSt
     };
 
     return (
-        <form className={formStyle["new-task"]} onSubmit={addTask}>
-            <div className={formStyle["input-container"]}>
+        <form
+        
+        // className={formStyle["new-task"]} 
+        onSubmit={addTask}
+        >
+            <div 
+            // className={formStyle["input-container"]}
+            >
                 <label htmlFor="input-todo">
                     Todo:
                 </label>
@@ -34,7 +40,9 @@ export default function Form ({ setTask }: { setTask: React.Dispatch<React.SetSt
                 onChange={(e) => handleForm(e)}
                 />
             </div>
-            <div className={formStyle["input-container"]}>
+            <div 
+            // className={formStyle["input-container"]}
+            >
                 <label htmlFor="time-todo">
                     Time:
                 </label>

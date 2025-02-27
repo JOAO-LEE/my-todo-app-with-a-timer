@@ -1,22 +1,23 @@
 import '../index.css';
+import './App.scss';
 import Form from '../components/Form/Form'
 import Tasks from '../components/Tasks/TaskList';
-import appStyle from './App.module.scss';
 import Timer from '../components/Timer/Timer';
 import { useState } from 'react';
 import { ITask } from '../interfaces/ITask';
+import { Header } from '../ui/Header';
 
 function App() {
   const [tasks, setTasks] = useState<Array<ITask>>([]);
   const [selectedTask, setSelectedTask] = useState<ITask>();
-  let [time, setTimer] = useState<number | undefined>();
+  const [time, setTimer] = useState<number | undefined>();
 
   const selectTask = (taskToSelect: ITask): void => {
     setSelectedTask(taskToSelect);
     setTasks(previousTasks => previousTasks
       .map(t => ({
           ...t,
-          taskSelected: t.id === taskToSelect.id ? true : false
+          taskSelected: t.id === taskToSelect.id
       })
     ));
   };
@@ -39,17 +40,20 @@ function App() {
         }
         return task;
       })
-    )};
+    )}
   }
 
   return (
-    <main >
-      <section className={appStyle["app-style"]}>
+    <>
+    <Header />
+    <main id="main-wrapper">
+      <section id="section-wrapper">
         <Form setTask={setTasks} />
         <Tasks tasks={tasks} selectTask={selectTask} deleteTask={deleteTask}/>
         <Timer handleTime={{time, setTimer}} selectedTask={selectedTask!} completeTask={completeTask}/>
       </section>
     </main>
+    </>
   )
 }
 

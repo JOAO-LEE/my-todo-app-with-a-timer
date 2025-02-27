@@ -1,105 +1,105 @@
-@keyframes fade-in-actions {
-  100% {
-    opacity: 1;
-  }
-}
+// @keyframes fade-in-actions {
+//   100% {
+//     opacity: 1;
+//   }
+// }
 
-@keyframes fade-out-actions {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
+// @keyframes fade-out-actions {
+//   0% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
+//   }
+// }
 
-@keyframes fade-in-task {
-  0% {
-    opacity: 0;
-    margin-left: 10px;
-  }
-  50% {
-    opacity: .5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+// @keyframes fade-in-task {
+//   0% {
+//     opacity: 0;
+//     margin-left: 10px;
+//   }
+//   50% {
+//     opacity: .5;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
 
-.actions-container {
-    display: inline-block;
-    .trash-can, .check-mark {
-      transition: .9s color, .5s;
-    }
-    .trash-can:hover, .check-mark:hover {
-      transform: scale(1.05);
-    }
-    .trash-can:hover {
-      color: #FF0000
-    }
-    .check-mark:hover {
-      color: green;
-    }
-  }
+// .actions-container {
+//     display: inline-block;
+//     .trash-can, .check-mark {
+//       transition: .9s color, .5s;
+//     }
+//     .trash-can:hover, .check-mark:hover {
+//       transform: scale(1.05);
+//     }
+//     .trash-can:hover {
+//       color: #FF0000
+//     }
+//     .check-mark:hover {
+//       color: green;
+//     }
+//   }
 
-  .item {
-    animation: fade-in-task .3s ease forwards;
-    display: flex;
-    justify-content: space-around;
-    background-color: #4D4D4D;
-    border-radius: 8px;
-    box-shadow: 2px 4px 4px #0000009F;
-    padding: 12px;
-    margin-bottom: 8px;
-    position: relative;
-    cursor: pointer;
+//   .item {
+//     animation: fade-in-task .3s ease forwards;
+//     display: flex;
+//     justify-content: space-around;
+//     background-color: #4D4D4D;
+//     border-radius: 8px;
+//     box-shadow: 2px 4px 4px #0000009F;
+//     padding: 12px;
+//     margin-bottom: 8px;
+//     position: relative;
+//     cursor: pointer;
 
-    .created-task {
-      max-width: fit-content;
-      word-break: break-all;
-    }
+//     .created-task {
+//       max-width: fit-content;
+//       word-break: break-all;
+//     }
   
-    .task-time {
-      color: #D0D0D0;
-    }
+//     .task-time {
+//       color: #D0D0D0;
+//     }
     
-    @media screen and (min-width:1280px) {
-      font-size: 1.8rem;
-    }
-  }
+//     @media screen and (min-width:1280px) {
+//       font-size: 1.8rem;
+//     }
+//   }
 
-.item .trash-can  {
-    animation: fade-out-actions .3s ease-in forwards;
-    opacity: 0;
-  }
+// .item .trash-can  {
+//     animation: fade-out-actions .3s ease-in forwards;
+//     opacity: 0;
+//   }
 
-  .item:hover .trash-can {
-    animation: fade-in-actions .3s ease-in forwards;
-  }
+//   .item:hover .trash-can {
+//     animation: fade-in-actions .3s ease-in forwards;
+//   }
 
-  .item .check-mark{
-    animation: fade-out-actions .3s ease-out forwards;
-    opacity: 0;
-  }
-  .item:hover .check-mark {
-    animation: fade-in-actions .3s ease-in forwards;
-  }
+//   .item .check-mark{
+//     animation: fade-out-actions .3s ease-out forwards;
+//     opacity: 0;
+//   }
+//   .item:hover .check-mark {
+//     animation: fade-in-actions .3s ease-in forwards;
+//   }
   
-  .selected-item {
-    box-shadow: 2px 4px 4px #0000009F inset; 
-  }
+//   .selected-item {
+//     box-shadow: 2px 4px 4px #0000009F inset; 
+//   }
 
-  .completed-item {
-    background-color: #92ff84;
-    color: black;
+//   .completed-item {
+//     background-color: #92ff84;
+//     color: black;
 
-  }
-  .completed-item .task-time{
-    background-color: #92ff84;
-    color: black;
+//   }
+//   .completed-item .task-time{
+//     background-color: #92ff84;
+//     color: black;
 
-  }
+//   }
 
-  .completed-item .check-mark {
-    opacity: 1;
-  }
+//   .completed-item .check-mark {
+//     opacity: 1;
+//   }

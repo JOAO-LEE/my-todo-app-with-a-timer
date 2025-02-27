@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@layer base {
+  :root {
+    font-family: "Poppins", sans-serif;
+    --bgColorDark: #02040f;
+    --bgColorLight: #eddea4;
+    --clrPrimary: #0fa3b1;
+    --clrSecundary: #f7a072;
+    --accColor: #b5e2fa;
+  }
+
+  #main-wrapper {
+    background-color: var(--bgColorLight);
+    color: var(--clrSecundary);
+    padding: 1rem;
+    min-height: calc(100dvh - 2rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+#section-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border: 0.125rem solid var(--clrPrimary);
+  border-radius: 1.25rem;
+  // background-color: #b5e2fa;
+}
