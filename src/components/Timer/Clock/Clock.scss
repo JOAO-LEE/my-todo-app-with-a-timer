@@ -1,0 +1,10 @@
+.clock {
+  font-size: 4.5rem;
+  text-align: center;
+  font-family: "Agbalumo";
+}
+
+.clock span:nth-child(3)  {
+  font-size: 5rem;
+  color: var(--clrPrimary);
+}

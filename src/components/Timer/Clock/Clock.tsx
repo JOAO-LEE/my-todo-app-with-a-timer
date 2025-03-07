@@ -1,22 +1,19 @@
-import clockStyle from './clock-style.module.scss';
+import './Clock.scss';
 
-export default function Clock ({ time = 0, running }: { time: number | undefined, running: boolean }) {
+export default function Clock ({ time = 0 }: { time: number | undefined}) {
 
     const minutes = Math.floor(time / 60);
     const seconds = time % 60;
     const [minute, minuteUnity] = minutes.toString().padStart(2, "0");
     const [second, secondUnity] = seconds.toString().padStart(2, "0");
-    console.log(time);
-    
-
-    const clockIsNotSetToZero = time && running ? clockStyle["clock-animation"] : clockStyle["clock-stopped"]
 
     return ( 
-        <>
-            <span className={`${clockStyle["clock-numbers"]} ${clockIsNotSetToZero}`}>{minute}</span>
-            <span className={`${clockStyle["clock-numbers"]} ${clockIsNotSetToZero}`}>{minuteUnity}</span>
-            <span className={`${clockStyle["clock-numbers"]} ${clockIsNotSetToZero}`}>{second}</span>
-            <span className={`${clockStyle["clock-numbers"]} ${clockIsNotSetToZero}`}>{secondUnity}</span>
-        </>
+        <div className='clock'>
+            <span>{minute}</span>
+            <span>{minuteUnity}</span>
+            <span>:</span>
+            <span>{second}</span>
+            <span>{secondUnity}</span>
+        </div>
     )
 }
